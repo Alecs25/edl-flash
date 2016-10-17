@@ -29,9 +29,9 @@ done
 port_num=$(ls /sys/bus/usb-serial/drivers/qcserial/ | grep tty)
 
 script_dir=`dirname "$0"`
-$script_dir/apps/emmcdl -p $port_num -f $script_dir\prog_emmc_firehose_8992_ddr.mbn -x rawprogram_unsparse.xml
+$script_dir/apps/emmcdl -p $port_num -f $script_dir/prog_emmc_firehose_8992_ddr.mbn -x rawprogram_unsparse.xml
 sleep 5
-$script_dir/apps/emmcdl -p $port_num -f $script_dir\prog_emmc_firehose_8992_ddr.mbn -x patch0.xml
+$script_dir/apps/emmcdl -p $port_num -f $script_dir/prog_emmc_firehose_8992_ddr.mbn -x patch0.xml
 
 $script_dir/apps/fh_loader --port=/dev/$port_num --noprompt --showpercentagecomplete --zlpawarehost=0 --memoryname=eMMC --reset
 
